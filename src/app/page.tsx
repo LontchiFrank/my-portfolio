@@ -12,6 +12,9 @@ import React from "react";
 import ReactTypingEffect from "react-typing-effect";
 import About from "./pages/About";
 import { Clock, Globe, GraduationCap, MapPin } from "lucide-react";
+import { url } from "inspector";
+import EducationTimeline from "@/components/Education";
+import SkillsSection from "./pages/Skills";
 
 const clicker = Clicker_Script({
 	weight: "400", // this font only has one weight
@@ -19,8 +22,22 @@ const clicker = Clicker_Script({
 });
 
 export default function Home() {
+	const radialGradientClass =
+		// "before:content-[''] " +
+		// "before:absolute before:inset-0 before:z-0 " +
+		"before:rounded-xl " +
+		"before:[background:radial-gradient(circle_at_right_top,rgba(255,255,255,0.1),transparent_80%)]";
 	return (
-		<div className=" w-[100vw] h-[100vh] bg-[#0E0B07]">
+		<div
+			className=" w-[100vw] h-[100vh]  "
+			style={{
+				backgroundImage: "url('./bg1.webp')",
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				backgroundRepeat: "no-repeat",
+			}}
+			// bg-[#0E0B07]
+		>
 			<Navbar />
 
 			<div className="container mx-auto max-w-6xl px-8 pt-20 w-full h-full ">
@@ -73,20 +90,6 @@ export default function Home() {
 					&lt; div &gt;{" "}
 				</p>
 				<div className="w-full h-full flex md:flex-row flex-col">
-					{/* <div className=" md:w-1/2 w-full md:h-full h-64 flex justify-start items-center">
-						<h2 className=" text-white md:text-5xl text-4xl md:text-left text-center">
-							Hello 👋🏿
-							<br className="md:block hidden" /> I'm{" "}
-							<span
-								className={`${clicker.className} text-[#FFAE00] md:text-6xl text-5xl `}>
-								Franky
-							</span>
-							, <br className="md:block hidden" />
-							<span style={{ color: "rgb(255, 174, 0)" }}>Soft</span>ware Devel
-							<span style={{ color: "rgb(255, 174, 0)" }}>oper</span>.
-						</h2>
-						
-					</div> */}
 					<div className="md:w-1/2 w-full md:h-full h-64 flex justify-start items-center">
 						<h2 className="text-white md:text-5xl text-4xl md:text-left text-center">
 							Hello 👋🏿
@@ -174,22 +177,6 @@ export default function Home() {
 								</React.Fragment>
 							))}
 						</div>
-						{/* Waveform lines at bottom right in small screens */}
-						{/* <div className="absolute -right-4 top-[80%] flex flex-row gap-2 rotate-90 md:hidden block">
-							{[0, 1, 2].map((i) => (
-								<motion.div
-									key={i}
-									animate={{ height: ["10px", "30px", "10px"] }}
-									transition={{
-										repeat: Infinity,
-										duration: 1.2,
-										delay: i * 0.2,
-										ease: "easeInOut",
-									}}
-									className="w-2 bg-[#FFAE00] rounded-md"
-								/>
-							))}
-						</div> */}
 
 						{/* Your image in front */}
 						<motion.div
@@ -222,50 +209,122 @@ export default function Home() {
 						</motion.div>
 					</div>
 				</div>
-			</div>
-
-			<div className="w-full flex justify-center">
-				<div
-					className="w-[70%] container mx-auto  h-32 absolute -bottom-16 rounded-2xl z-30
-					bg-white/30 backdrop-blur-md border border-white/40 shadow-lg flex justify-center ">
-					<div className="p-10">
-						<div className="flex justify-center">
-							{" "}
-							<MapPin color="white" className="text-[8rem]" />
-						</div>
-						<span className="text-center text-2xl font-bold">Cameroon 🇨🇲</span>
-					</div>
-					<div className="p-10">
-						<div className="flex justify-center">
-							{" "}
-							<GraduationCap color="white" className="text-[8rem]" />
-						</div>
-						<span className="text-center text-2xl font-bold">
-							University of Buea
-						</span>
-					</div>
-					<div className="p-10">
-						<div className="flex justify-center">
-							{" "}
-							<Globe color="white" className="text-[8rem]" />
-						</div>
-						<span className="text-center text-2xl font-bold">
-							English, French & German
-						</span>
-					</div>
-					<div className="p-10">
-						<div className="flex justify-center">
-							{" "}
-							<Clock color="white" className="text-[8rem]" />
-						</div>
-						<span className="text-center text-2xl font-bold">GMT+1</span>
-					</div>
+				<div className="w-full flex justify-center bg-amber-600">
+					<h1 className="text-4xl md:text-6xl font-bold mb-4 text-white absolute -bottom-12 z-20">
+						About Me
+					</h1>
 				</div>
 			</div>
-			<div className="w-full relative bg-[#eae0d5] h-full">
-				<div className="container mx-auto max-w-6xl pt-20">
+			{/* <h3 className="text-white">Hello 👋🏿</h3> */}
+			{/* bg-white/30 backdrop-blur-md border border-white/40   absolute md:-bottom-[23rem] -bottom-[46rem] z-30  */}
+			<div className="w-full relative  bg-[#0e0e0e]  h-full pt-12">
+				{/* <div className="container mx-auto max-w-6xl pt-20">
 					<About />
+				</div> */}
+				{/* <div className="w-full flex justify-center ">
+					<h1 className="text-4xl md:text-6xl font-bold mb-4 text-white ">
+						About Me
+					</h1>
+				
+				</div> */}
+				<div
+					className={`relative max-w-6xl container mx-auto rounded-2xl 
+					bg-[#141414cc] p-6 flex flex-col justify-center items-center
+					before:content-[''] before:absolute before:inset-0 before:rounded-2xl 
+					before:[background:radial-gradient(circle_at_right_top,rgba(255,255,255,0.1),transparent_80%)]
+					before:z-0`}>
+					<div className="grid md:grid-cols-3 grid-cols-2 text-white ">
+						<div className="py-5 px-4 flex md:flex-row flex-col gap-2 items-center ">
+							<span className="flex items-center justify-center w-10 h-10 rounded-lg bg-black bg-opacity-50 backdrop-blur group-hover:bg-white group-hover:text-black transition-colors duration-300">
+								🌏
+							</span>
+							<span className="text-center md:text-md text-sm font-bold">
+								United Kingdom 🇬🇧
+							</span>
+						</div>
+						<div className="py-5 px-4 flex md:flex-row flex-col gap-2 items-center">
+							<span className="flex items-center justify-center w-10 h-10 rounded-lg bg-black bg-opacity-50 backdrop-blur group-hover:bg-white group-hover:text-black transition-colors duration-300">
+								🗣️
+							</span>
+							<span className="text-center md:text-md text-sm font-bold">
+								English, French & Dutsch
+							</span>
+						</div>
+						<div className="py-5 px-4 flex md:flex-row flex-col gap-2 items-center">
+							<span className="flex items-center justify-center w-10 h-10 rounded-lg bg-black bg-opacity-50 backdrop-blur group-hover:bg-white group-hover:text-black transition-colors duration-300">
+								💻
+							</span>
+							<span className="text-center md:text-md text-sm font-bold">
+								Software Developer
+							</span>
+						</div>
+						<div className="py-5 px-4 flex md:flex-row flex-col gap-2 items-center">
+							<span className="flex items-center justify-center w-10 h-10 rounded-lg bg-black bg-opacity-50 backdrop-blur group-hover:bg-white group-hover:text-black transition-colors duration-300">
+								🚀
+							</span>
+							<span className="text-center md:text-md text-sm font-bold">
+								Determined
+							</span>
+						</div>
+						<div className="py-5 px-4 flex md:flex-row flex-col gap-2 items-center">
+							<span className="flex items-center justify-center w-10 h-10 rounded-lg bg-black bg-opacity-50 backdrop-blur group-hover:bg-white group-hover:text-black transition-colors duration-300">
+								🎓
+							</span>
+							<span className="text-center md:text-md text-sm font-bold">
+								University of Buea
+							</span>
+						</div>
+						<div className="py-5 px-4 flex md:flex-row flex-col gap-2 items-center">
+							<span className="flex items-center justify-center w-10 h-10 rounded-lg bg-black bg-opacity-50 backdrop-blur group-hover:bg-white group-hover:text-black transition-colors duration-300">
+								✨
+							</span>
+							<span className="text-center md:text-md text-sm font-bold">
+								Techie
+							</span>
+						</div>
+					</div>
+					<div className=" w-full flex justify-center flex-col items-center gap-2">
+						{/* Logo placeholder: Rounded (rounded-full), size (w-12 h-12), darker background (bg-neutral-800), center text. */}
+						{/* <div className="w-24 h-24 rounded-full bg-neutral-800 flex items-center justify-center font-bold text-xl flex-shrink-0">
+							<Image
+								src="/3.png" // replace with your image
+								alt="About me"
+								fill
+								className="object-cover"
+							/>
+						</div> */}
+						<div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+							<Image
+								src="/dev.jpg" // replace with your image
+								alt="About me"
+								fill
+								className="object-cover"
+							/>
+						</div>
+
+						{/* Title and details: Margin left (ml-4). */}
+						<div className="ml-4 text-white">
+							<p className="md:text-md text-sm mb-4">
+								Hi, I’m{" "}
+								<span className={` text-[#FFAE00] font-semibold`}>Franky</span>,
+								a passionate Software Developer. I love building web
+								applications that are fast, responsive, and user-friendly. I
+								enjoy learning new technologies, solving problems, and turning
+								ideas into real-world solutions. My goal is to craft digital
+								experiences that delight users and make an impact.
+							</p>
+
+							<p className="md:text-md text-sm"></p>
+						</div>
+					</div>
 				</div>
+				<EducationTimeline />
+				<div className="w-full flex justify-center bg-[#0e0e0e]">
+					<h1 className="text-4xl md:text-6xl font-bold mb-4 text-white ">
+						Skills
+					</h1>
+				</div>
+				<SkillsSection />
 			</div>
 		</div>
 	);

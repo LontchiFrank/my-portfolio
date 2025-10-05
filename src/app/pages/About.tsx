@@ -13,7 +13,7 @@ const clicker = Clicker_Script({
 
 export default function About() {
 	return (
-		<section className=" flex flex-col md:flex-row items-center justify-center p-8  text-[#0E0B07]">
+		<section className=" flex flex-col md:flex-row-reverse items-center justify-center p-8  text-[#0E0B07]">
 			{/* Text section */}
 			<motion.div
 				className="md:w-1/2 w-full mb-8 md:mb-0 md:pr-8"
