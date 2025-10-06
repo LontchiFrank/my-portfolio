@@ -15,6 +15,7 @@ import { Clock, Globe, GraduationCap, MapPin } from "lucide-react";
 import { url } from "inspector";
 import EducationTimeline from "@/components/Education";
 import SkillsSection from "./pages/Skills";
+import Project from "./pages/Project";
 
 const clicker = Clicker_Script({
 	weight: "400", // this font only has one weight
@@ -325,6 +326,7 @@ export default function Home() {
 					</h1>
 				</div>
 				<SkillsSection />
+				<Project />
 			</div>
 		</div>
 	);
