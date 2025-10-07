@@ -171,6 +171,10 @@ const SkillsSection = () => {
 				},
 				{ name: "CI/CD", icon: <FcWorkflow className="w-4 h-4" /> },
 				{ name: "Git", icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" /> },
+				{
+					name: "Docker",
+					icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
+				},
 			],
 		},
 	];
