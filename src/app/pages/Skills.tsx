@@ -33,6 +33,7 @@ import { TbBrandVscode } from "react-icons/tb";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
 import { MdAnimation } from "react-icons/md";
 import { FcWorkflow } from "react-icons/fc";
+
 // Define the structure for each skill
 interface Skill {
 	icon: ReactElement;
@@ -53,7 +54,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
 	skills,
 	color,
 }) => (
-	<div className="group relative overflow-hidden bg-gradient-to-br from-[#141414] to-[#1a1a1a]   hover:scale-[1.02] transition-all duration-300 border border-transparent  hover:border-[#FFAE00] rounded-2xl">
+	<div className="group relative overflow-hidden bg-gradient-to-br from-[#141414] to-[#1a1a1a]   hover:scale-[1.02] transition-all duration-300 border border-transparent shadow-lg hover:shadow-[0_0_25px_#FFAE00] hover:border-[#FFAE00] rounded-2xl">
 		<div className="absolute inset-0 before:[background:radial-gradient(circle_at_right_top,rgba(255,255,255,0.1),transparent_80%)]  animate-shimmer"></div>
 		<div className="p-6 relative z-10">
 			<div className="flex items-center gap-4 mb-6">
@@ -184,7 +185,7 @@ const SkillsSection = () => {
 			{/* Grid Background */}
 			<div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
 
-			<section className="container mx-auto px-4 py-11 relative z-10">
+			<section className="container mx-auto px-4 relative z-10">
 				<div className="flex justify-center items-center ">
 					<IconCloudDemo />
 				</div>

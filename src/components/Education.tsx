@@ -182,7 +182,7 @@ export default function EducationTimeline() {
 									{/* Timeline dot */}
 									<div
 										className={`z-10 w-10 h-10 rounded-full bg-black border-2 flex items-center justify-center font-bold
-                                        md:absolute md:left-1/2 md:-translate-x-1/2
+                                        md:absolute md:left-1/2 md:-translate-x-1/2 
                                         mx-auto mb-6 md:mb-0 transition-all duration-300
                                         ${
 																					isHovered
@@ -200,10 +200,10 @@ export default function EducationTimeline() {
 										}}
 										transition={{ duration: 0.35, ease: "easeInOut" }}
 										className={`overflow-hidden bg-gradient-to-br from-[#141414] to-[#1a1a1a]
-                                        rounded-2xl shadow-lg p-6 relative z-20 border-2 w-full md:w-[45%]
+                                        rounded-2xl p-6 relative z-20 w-full md:w-[45%] 
                                         ${
 																					isHovered
-																						? "border-[#FFAE00] shadow-[0_0_25px_#FFAE00]"
+																						? "border border-[#FFAE00]  shadow-lg hover:shadow-[0_0_25px_#FFAE00] "
 																						: "border-transparent shadow-none"
 																				}
                                         ${
