@@ -8,11 +8,6 @@ import { Clicker_Script } from "next/font/google";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import React from "react";
-
-import ReactTypingEffect from "react-typing-effect";
-import About from "./pages/About";
-import { Clock, Globe, GraduationCap, MapPin } from "lucide-react";
-import { url } from "inspector";
 import EducationTimeline from "@/components/Education";
 import SkillsSection from "./pages/Skills";
 import Project from "./pages/Project";
@@ -23,11 +18,6 @@ const clicker = Clicker_Script({
 });
 
 export default function Home() {
-	const radialGradientClass =
-		// "before:content-[''] " +
-		// "before:absolute before:inset-0 before:z-0 " +
-		"before:rounded-xl " +
-		"before:[background:radial-gradient(circle_at_right_top,rgba(255,255,255,0.1),transparent_80%)]";
 	return (
 		<div
 			className=" w-[100vw] h-[100vh]  "
@@ -94,7 +84,7 @@ export default function Home() {
 					<div className="md:w-1/2 w-full md:h-full h-64 flex justify-start items-center">
 						<h2 className="text-white md:text-5xl text-4xl md:text-left text-center">
 							Hello 👋🏿
-							<br className="md:block hidden" /> I'm{" "}
+							<br className="md:block hidden" /> I&lsquo;m{" "}
 							<span
 								className={`${clicker.className} text-[#FFAE00] md:text-6xl text-5xl font-bold`}>
 								Franky

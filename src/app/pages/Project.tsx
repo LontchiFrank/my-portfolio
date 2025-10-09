@@ -111,6 +111,7 @@ const ProjectCard = ({
 	index,
 	showCodeButton = true,
 }: {
+	/* eslint-disable @typescript-eslint/no-explicit-any */
 	project: any;
 	index: number;
 	showCodeButton?: boolean;

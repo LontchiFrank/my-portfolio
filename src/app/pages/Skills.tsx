@@ -1,28 +1,16 @@
 /** @format */
 
 import React, { ReactElement } from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import IconCloudDemo from "@/components/globe";
-import { Code2, Paintbrush, Database, Layout, Cpu, Cloud } from "lucide-react";
-import {
-	FaReact,
-	FaNodeJs,
-	FaPython,
-	FaDocker,
-	FaGitAlt,
-	FaLinux,
-	FaFigma,
-	FaAws,
-} from "react-icons/fa";
+import { Code2, Database, Cpu, Cloud } from "lucide-react";
+import { FaReact, FaNodeJs, FaDocker, FaGitAlt } from "react-icons/fa";
 import {
 	SiNextdotjs,
 	SiTypescript,
 	SiTailwindcss,
-	SiPostgresql,
 	SiMongodb,
 	SiGraphql,
-	SiJest,
 	SiWebpack,
 	SiRedux,
 	SiFirebase,
@@ -31,7 +19,6 @@ import {
 } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
-import { MdAnimation } from "react-icons/md";
 import { FcWorkflow } from "react-icons/fc";
 
 // Define the structure for each skill

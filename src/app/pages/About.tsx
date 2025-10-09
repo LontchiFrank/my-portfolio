@@ -4,12 +4,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Clicker_Script } from "next/font/google";
+// import { Clicker_Script } from "next/font/google";
 
-const clicker = Clicker_Script({
-	weight: "400", // this font only has one weight
-	subsets: ["latin"],
-});
+// const clicker = Clicker_Script({
+// 	weight: "400", // this font only has one weight
+// 	subsets: ["latin"],
+// });
 
 export default function About() {
 	return (
