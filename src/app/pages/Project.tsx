@@ -67,19 +67,19 @@ const personalProjects = [
 	},
 	{
 		id: 1,
-		title: "Portfolio Website",
+		title: "DIP Website",
 		description:
-			"A modern and responsive personal portfolio built with Next.js, Tailwind CSS, and Framer Motion.",
-		tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-		image: "/pic.jpg",
-		link: "https://pixabay.com/photos/man-face-cigarette-portrait-2179358/",
-		code: "https://github.com/your-username/portfolio", // example
+			"Professionally equip our members through a proven modern support system to excel in their various industries and network marketing in particular",
+		tech: ["React.js", "Framer", "Bootstrap"],
+		image: "/dip.png",
+		link: "  https://dipglobal.netlify.app/",
+		code: "https://github.com/your-username/cybersecurity-dashboard",
 	},
 	{
 		id: 2,
-		title: "Cybersecurity Dashboard",
+		title: "Poexa Dashboard",
 		description:
-			"An interactive dashboard that visualizes threat data and network activity in real-time.",
+			"An interactive dashboard for poem creation and reviewing poems and stories world wide.",
 		tech: ["Next.js", "Chart.js", "Tailwind CSS"],
 		image: "/poexa.png",
 		link: "https://pixabay.com/photos/man-face-cigarette-portrait-2179358/",
@@ -104,6 +104,16 @@ const personalProjects = [
 		link: "https://casino-gules.vercel.app/",
 		code: "https://github.com/your-username/cybersecurity-dashboard",
 	},
+	{
+		id: 10,
+		title: "OREBI Website",
+		description:
+			"Ecommerce website, to find  and purchase product at cheap rate",
+		tech: ["React.js", "Framer", "Bootstrap"],
+		image: "/ecom.png",
+		link: " https://monumental-fenglisu-02e110.netlify.app/",
+		code: "https://github.com/your-username/cybersecurity-dashboard",
+	},
 ];
 
 const ProjectCard = ({
@@ -111,7 +121,7 @@ const ProjectCard = ({
 	index,
 	showCodeButton = true,
 }: {
-	/* eslint-disable @typescript-eslint/no-explicit-any */
+	// @typescript-eslint/no-explicit-any
 	project: any;
 	index: number;
 	showCodeButton?: boolean;
@@ -192,7 +202,7 @@ export default function ProjectsSection() {
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
-					className="text-4xl md:text-6xl font-bold mb-16">
+					className="text-4xl md:text-5xl font-bold mb-16">
 					PROJECTS
 				</motion.h2>
 

@@ -20,6 +20,7 @@ import {
 import { TbBrandVscode } from "react-icons/tb";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
 import { FcWorkflow } from "react-icons/fc";
+import { motion } from "framer-motion";
 
 // Define the structure for each skill
 interface Skill {
@@ -33,6 +34,7 @@ interface SkillCardProps {
 	title: string;
 	skills: Skill[];
 	color?: string; // optional in case you don't always pass it
+	index: number;
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({
@@ -40,8 +42,14 @@ const SkillCard: React.FC<SkillCardProps> = ({
 	title,
 	skills,
 	color,
+	index,
 }) => (
-	<div className="group relative overflow-hidden bg-gradient-to-br from-[#141414] to-[#1a1a1a]   hover:scale-[1.02] transition-all duration-300 border border-transparent shadow-lg hover:shadow-[0_0_25px_#FFAE00] hover:border-[#FFAE00] rounded-2xl">
+	<motion.div
+		className="group relative overflow-hidden bg-gradient-to-br from-[#141414] to-[#1a1a1a]   hover:scale-[1.02] transition-all duration-300 border border-transparent shadow-lg hover:shadow-[0_0_25px_#FFAE00] hover:border-[#FFAE00] rounded-2xl"
+		initial={{ opacity: 0, y: 30 }}
+		whileInView={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.5, delay: index * 0.15 }}
+		whileHover={{ scale: 1.03 }}>
 		<div className="absolute inset-0 before:[background:radial-gradient(circle_at_right_top,rgba(255,255,255,0.1),transparent_80%)]  animate-shimmer"></div>
 		<div className="p-6 relative z-10">
 			<div className="flex items-center gap-4 mb-6">
@@ -69,7 +77,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
 				))}
 			</div>
 		</div>
-	</div>
+	</motion.div>
 );
 
 const SkillsSection = () => {
@@ -186,6 +194,7 @@ const SkillsSection = () => {
 								title={category.title}
 								skills={category.skills}
 								color={category.color}
+								index={index}
 							/>
 						))}
 					</div>

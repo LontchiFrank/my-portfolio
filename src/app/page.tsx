@@ -11,6 +11,8 @@ import React from "react";
 import EducationTimeline from "@/components/Education";
 import SkillsSection from "./pages/Skills";
 import Project from "./pages/Project";
+import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 
 const clicker = Clicker_Script({
 	weight: "400", // this font only has one weight
@@ -201,7 +203,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div className="w-full flex justify-center bg-amber-600">
-					<h1 className="text-4xl md:text-6xl font-bold mb-4 text-white absolute -bottom-12 z-20">
+					<h1 className="text-4xl md:text-5xl font-bold mb-4 text-white absolute -bottom-12 z-20">
 						About Me
 					</h1>
 				</div>
@@ -311,12 +313,14 @@ export default function Home() {
 				</div>
 				<EducationTimeline />
 				<div className="w-full flex justify-center bg-[#0e0e0e]">
-					<h1 className="text-4xl md:text-6xl font-bold mb-4 text-white ">
+					<h1 className="text-4xl md:text-5xl font-bold mb-4 text-white ">
 						Skills
 					</h1>
 				</div>
 				<SkillsSection />
 				<Project />
+				<Contact />
+				<Footer />
 			</div>
 		</div>
 	);

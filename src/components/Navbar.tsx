@@ -37,7 +37,7 @@ export default function Navbar() {
 			className={`fixed w-full z-40 transition-colors duration-300 backdrop-blur-sm
         ${
 					scrolled
-						? "bg-white/80 dark:bg-slate-900/70 shadow-sm"
+						? "bg-white/70 dark:bg-slate-900/70 shadow-sm"
 						: "bg-transparent"
 				}`}
 			aria-label="Main navigation">
@@ -68,7 +68,7 @@ export default function Navbar() {
                     ${
 											active
 												? "text-[#ffb703] dark:text-[#ffb703]"
-												: "text-white dark:text-slate-200 hover:text-[#ffd363]"
+												: "text-white dark:text-black hover:text-[#ffd363]"
 										}`}>
 									{item.label}
 									{active && (
@@ -85,7 +85,7 @@ export default function Navbar() {
 							href="/resume.pdf"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="ml-2 inline-block rounded-md px-3 py-1.5 border border-[#ffb703] text-[#ffb703] text-sm font-medium hover:bg-indigo-50 dark:hover:bg-slate-800">
+							className="ml-2 inline-block rounded-md px-3 py-1.5 border border-[#ffb703] text-[#ffb703] hover:text-black text-sm font-medium hover:bg-[#ffb703] dark:hover:bg-slate-800">
 							Resume
 						</Link>
 					</div>
