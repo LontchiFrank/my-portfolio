@@ -53,7 +53,7 @@ const personalProjects = [
 		description:
 			"A responsive and modern corporate website built for Mansar Company, focusing on SEO and performance.",
 		tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-		image: "/Mansar.png",
+		image: "/mansar.png",
 		link: "https://usemansar.xyz/", // replace with actual company site
 	},
 	{
@@ -62,7 +62,7 @@ const personalProjects = [
 		description:
 			"A dynamic company website showcasing tech solutions and digital services, optimized for mobile and desktop.",
 		tech: ["Next.js", "Tailwind CSS", "Vercel"],
-		image: "/divine.png",
+		image: "/saas.png",
 		link: "https://divinetech.vercel.app/",
 	},
 
@@ -101,7 +101,7 @@ const personalProjects = [
 		description:
 			"A dynamic company website showcasing tech solutions and digital services, optimized for mobile and desktop.",
 		tech: ["Next.js", "Tailwind CSS", "Vercel"],
-		image: "/african.png",
+		image: "/resto.png",
 		link: "https://fodjo-resto-lnf6.vercel.app/",
 	},
 	{
