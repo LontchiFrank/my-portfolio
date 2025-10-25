@@ -178,7 +178,7 @@ export default function Home() {
 							transition={{ duration: 1, delay: 0.3 }}
 							className="relative z-10 mb-[7.3rem] pb-0 md:block hidden">
 							<Image
-								src="/4.png" // replace with your photo path
+								src="/4.webp" // replace with your photo path
 								alt="Franky"
 								width={370}
 								height={370}
