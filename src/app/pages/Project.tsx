@@ -36,6 +36,16 @@ import Link from "next/link";
 // 	},
 // ];
 
+type Project = {
+	id: number;
+	title: string;
+	description: string;
+	tech: string[];
+	image: string;
+	link: string;
+	code?: string;
+};
+
 const personalProjects = [
 	{
 		id: 5,
@@ -121,8 +131,7 @@ const ProjectCard = ({
 	index,
 	showCodeButton = true,
 }: {
-	// @typescript-eslint/no-explicit-any
-	project: any;
+	project: Project; // @typescript-eslint/no-explicit-any
 	index: number;
 	showCodeButton?: boolean;
 }) => (
