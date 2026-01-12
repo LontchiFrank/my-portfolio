@@ -31,6 +31,11 @@ export const metadata: Metadata = {
 	],
 	authors: [{ name: "Fodjo Frank" }],
 	creator: "Fodjo Frank",
+	icons: {
+		icon: "/logos.png",
+		shortcut: "/logos.png",
+		apple: "/logos.png",
+	},
 	openGraph: {
 		type: "website",
 		locale: "en_US",
@@ -38,6 +43,14 @@ export const metadata: Metadata = {
 		description:
 			"Full Stack Software Developer specializing in modern web applications and technologies.",
 		siteName: "Fodjo Frank Portfolio",
+		images: [
+			{
+				url: "/logos.png",
+				width: 1200,
+				height: 630,
+				alt: "Fodjo Frank Portfolio",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
@@ -45,6 +58,7 @@ export const metadata: Metadata = {
 		description:
 			"Full Stack Software Developer specializing in modern web applications and technologies.",
 		creator: "@fodjofrank",
+		images: ["/logos.png"],
 	},
 };
 
