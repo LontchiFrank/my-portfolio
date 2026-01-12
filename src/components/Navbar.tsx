@@ -14,16 +14,18 @@ type NavItem = {
 };
 
 const NAV_ITEMS: NavItem[] = [
-	{ href: "/", label: "Home" },
-	{ href: "/about", label: "About" },
-	{ href: "/projects", label: "Projects" },
-	{ href: "/contact", label: "Contact" },
+	{ href: "#home", label: "Home" },
+	{ href: "#about", label: "About" },
+	{ href: "#skills", label: "Skills" },
+	{ href: "#projects", label: "Projects" },
+	{ href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
 	const pathname = usePathname();
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
+	const [activeSection, setActiveSection] = useState("#home");
 
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 20);
@@ -31,6 +33,25 @@ export default function Navbar() {
 		window.addEventListener("scroll", onScroll);
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
+
+	const handleNavClick = (
+		e: React.MouseEvent<HTMLAnchorElement>,
+		href: string
+	) => {
+		e.preventDefault();
+		setMobileOpen(false);
+		setActiveSection(href);
+
+		const targetId = href.substring(1); // Remove the '#'
+		const targetElement = document.getElementById(targetId);
+
+		if (targetElement) {
+			targetElement.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+			});
+		}
+	};
 
 	return (
 		<nav
@@ -59,16 +80,17 @@ export default function Navbar() {
 					{/* Desktop nav */}
 					<div className="hidden md:flex md:items-center md:space-x-6">
 						{NAV_ITEMS.map((item) => {
-							const active = pathname === item.href;
+							const active = activeSection === item.href;
 							return (
 								<Link
 									key={item.href}
 									href={item.href}
-									className={`relative px-2 py-1 font-medium transition-colors duration-200 
+									onClick={(e) => handleNavClick(e, item.href)}
+									className={`relative px-2 py-1 font-medium transition-colors duration-200
                     ${
 											active
-												? "text-[#ffb703] dark:text-[#ffb703]"
-												: "text-white dark:text-black hover:text-[#ffd363]"
+												? "text-[#e8a600] dark:text-[#ffb703]"
+												: `${scrolled ? "text-black" : "text-white"}`
 										}`}>
 									{item.label}
 									{active && (
@@ -81,13 +103,16 @@ export default function Navbar() {
 							);
 						})}
 
-						<Link
-							href="/resume.pdf"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="ml-2 inline-block rounded-md px-3 py-1.5 border border-[#ffb703] text-[#ffb703] hover:text-black text-sm font-medium hover:bg-[#ffb703] dark:hover:bg-slate-800">
+						<a
+							href="/FrankFodjo_CV.pdf"
+							download="FrankFodjo_CV.pdf"
+							className={
+								scrolled
+									? "ml-2 inline-block rounded-md px-3 py-1.5 border border-[#ffb703] text-white bg-[#ffb703] hover:text-black text-sm font-medium hover:bg-[#ffb703] dark:hover:bg-slate-800"
+									: "ml-2 inline-block rounded-md px-3 py-1.5 border border-[#ffb703] text-[#ffb703] hover:text-black text-sm font-medium hover:bg-[#ffb703] dark:hover:bg-slate-800"
+							}>
 							Resume
-						</Link>
+						</a>
 					</div>
 
 					{/* Mobile controls */}
@@ -113,15 +138,16 @@ export default function Navbar() {
 						className="md:hidden">
 						<div className="px-4 pt-2 pb-4 space-y-2 border-t bg-white/95 dark:bg-slate-900/95">
 							{NAV_ITEMS.map((item) => {
-								const active = pathname === item.href;
+								const active = activeSection === item.href;
 								return (
 									<Link
 										key={item.href}
 										href={item.href}
+										onClick={(e) => handleNavClick(e, item.href)}
 										className={`block px-3 py-2 rounded-md font-medium transition-colors duration-150
                       ${
 												active
-													? "bg-indigo-50 dark:bg-slate-800 text-indigo-600"
+													? "bg-[#ffb703]-100 dark:bg-slate-800 text-[#ffb703]"
 													: "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
 											}`}>
 										{item.label}
@@ -129,13 +155,12 @@ export default function Navbar() {
 								);
 							})}
 
-							<Link
-								href="/resume.pdf"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="block px-3 py-2 rounded-md font-medium border border-indigo-600 text-indigo-600 text-center">
+							<a
+								href="/FrankFodjo_CV.pdf"
+								download="FrankFodjo_CV.pdf"
+								className="block px-3 py-2 rounded-md font-medium border border-[#ffb703] text-[#ffb703] text-center">
 								Resume
-							</Link>
+							</a>
 						</div>
 					</motion.div>
 				)}
