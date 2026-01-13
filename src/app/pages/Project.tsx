@@ -58,6 +58,16 @@ const personalProjects = [
 	},
 	{
 		id: 6,
+		title: "Barberflow",
+		description:
+			"Stop losing customers to no-shows. BarberFlow sends automatic SMS reminders and helps you manage appointments from your phone.",
+		tech: ["Next.js", "Tailwind CSS", "Vercel"],
+		image: "/barbar.png",
+		link: "https://barber-flow-two.vercel.app/",
+		code: "https://github.com/LontchiFrank/BarberFlow/",
+	},
+	{
+		id: 7,
 		title: "DivineTech Website",
 		description:
 			"A dynamic company website showcasing tech solutions and digital services, optimized for mobile and desktop.",
@@ -67,7 +77,7 @@ const personalProjects = [
 	},
 
 	{
-		id: 7,
+		id: 8,
 		title: "YUP Website",
 		description:
 			"A dynamic company website showcasing tech solutions and digital services, optimized for mobile and desktop.",
