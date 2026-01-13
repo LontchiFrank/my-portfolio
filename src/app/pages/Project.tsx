@@ -61,7 +61,7 @@ const personalProjects = [
 		title: "Barberflow",
 		description:
 			"Stop losing customers to no-shows. BarberFlow sends automatic SMS reminders and helps you manage appointments from your phone.",
-		tech: ["Next.js", "Tailwind CSS", "Vercel"],
+		tech: ["Next.js", "Tailwind CSS", "Vercel", "Python"],
 		image: "/barbar.png",
 		link: "https://barber-flow-two.vercel.app/",
 		code: "https://github.com/LontchiFrank/BarberFlow/",
