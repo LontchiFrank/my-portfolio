@@ -58,6 +58,15 @@ const personalProjects = [
 	},
 	{
 		id: 6,
+		title: "Flixzbox",
+		description:
+			"Stram Movies and TV shows online, watch with friends, you can add friends or invite friends to join to watch movies with you",
+		tech: ["React.js", "Tailwind CSS", "Python", "Fast API"],
+		image: "/flixz.png",
+		link: "https://flixz-iota.vercel.app/", // replace with actual company site
+	},
+	{
+		id: 7,
 		title: "Barberflow",
 		description:
 			"Stop losing customers to no-shows. BarberFlow sends automatic SMS reminders and helps you manage appointments from your phone.",
@@ -67,7 +76,7 @@ const personalProjects = [
 		code: "https://github.com/LontchiFrank/BarberFlow/",
 	},
 	{
-		id: 7,
+		id: 8,
 		title: "DivineTech Website",
 		description:
 			"A dynamic company website showcasing tech solutions and digital services, optimized for mobile and desktop.",
@@ -77,7 +86,7 @@ const personalProjects = [
 	},
 
 	{
-		id: 8,
+		id: 9,
 		title: "YUP Website",
 		description:
 			"A dynamic company website showcasing tech solutions and digital services, optimized for mobile and desktop.",
