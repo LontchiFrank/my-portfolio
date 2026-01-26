@@ -60,7 +60,7 @@ const personalProjects = [
 		id: 6,
 		title: "Flixzbox",
 		description:
-			"Stram Movies and TV shows online, watch with friends, you can add friends or invite friends to join to watch movies with you.",
+			"Stream Movies and TV shows online, watch with friends, you can add friends or invite friends to join to watch movies with you.",
 		tech: ["React.js", "Tailwind CSS", "Python", "Fast API"],
 		image: "/flixz.png",
 		link: "https://flixz-iota.vercel.app/", // replace with actual company site
