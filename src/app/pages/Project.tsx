@@ -54,7 +54,7 @@ const personalProjects = [
 			"A responsive and modern corporate website built for Mansar Company, focusing on SEO and performance.",
 		tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
 		image: "/mansar.png",
-		link: "https://usemansar.xyz/", // replace with actual company site
+		link: "https://usemansar.com/", // replace with actual company site
 	},
 	{
 		id: 6,
