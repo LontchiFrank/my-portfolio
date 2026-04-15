@@ -22,6 +22,7 @@ const clicker = Clicker_Script({
 export default function Home() {
 	return (
 		<div
+			id="home"
 			className=" w-[100vw] h-[100vh]  "
 			style={{
 				backgroundImage: "url('./bg1.webp')",
@@ -193,7 +194,7 @@ export default function Home() {
 							transition={{ duration: 1, delay: 0.3 }}
 							className="relative z-10 mb-[4.3rem] md:hidden block">
 							<Image
-								src="/4.png" // replace with your photo path
+								src="/4.webp" // replace with your photo path
 								alt="Franky"
 								width={250}
 								height={250}
@@ -210,7 +211,7 @@ export default function Home() {
 			</div>
 			{/* <h3 className="text-white">Hello 👋🏿</h3> */}
 			{/* bg-white/30 backdrop-blur-md border border-white/40   absolute md:-bottom-[23rem] -bottom-[46rem] z-30  */}
-			<div className="w-full relative  bg-[#0e0e0e]  h-full pt-12">
+			<div id="about" className="w-full relative  bg-[#0e0e0e]  h-full pt-12">
 				{/* <div className="container mx-auto max-w-6xl pt-20">
 					<About />
 				</div> */}
@@ -312,7 +313,7 @@ export default function Home() {
 					</div>
 				</div>
 				<EducationTimeline />
-				<div className="w-full flex justify-center bg-[#0e0e0e]">
+				<div id="skills" className="w-full flex justify-center bg-[#0e0e0e]">
 					<h1 className="text-4xl md:text-5xl font-bold mb-4 text-white ">
 						Skills
 					</h1>

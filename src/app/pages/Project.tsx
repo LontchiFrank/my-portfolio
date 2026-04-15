@@ -54,10 +54,29 @@ const personalProjects = [
 			"A responsive and modern corporate website built for Mansar Company, focusing on SEO and performance.",
 		tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
 		image: "/mansar.png",
-		link: "https://usemansar.xyz/", // replace with actual company site
+		link: "https://usemansar.com/", // replace with actual company site
 	},
 	{
 		id: 6,
+		title: "Flixzbox",
+		description:
+			"Stream Movies and TV shows online, watch with friends, you can add friends or invite friends to join to watch movies with you.",
+		tech: ["React.js", "Tailwind CSS", "Python", "Fast API"],
+		image: "/flixz.png",
+		link: "https://flixz-iota.vercel.app/", // replace with actual company site
+	},
+	{
+		id: 7,
+		title: "Barberflow",
+		description:
+			"Stop losing customers to no-shows. BarberFlow sends automatic SMS reminders and helps you manage appointments from your phone.",
+		tech: ["Next.js", "Tailwind CSS", "Vercel", "Python"],
+		image: "/barbar.png",
+		link: "https://barber-flow-two.vercel.app/",
+		code: "https://github.com/LontchiFrank/BarberFlow/",
+	},
+	{
+		id: 8,
 		title: "DivineTech Website",
 		description:
 			"A dynamic company website showcasing tech solutions and digital services, optimized for mobile and desktop.",
@@ -67,7 +86,7 @@ const personalProjects = [
 	},
 
 	{
-		id: 7,
+		id: 9,
 		title: "YUP Website",
 		description:
 			"A dynamic company website showcasing tech solutions and digital services, optimized for mobile and desktop.",
