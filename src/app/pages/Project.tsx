@@ -125,6 +125,24 @@ const personalProjects = [
 		code: "https://github.com/your-username/cybersecurity-dashboard",
 	},
 ];
+const mobileProjects = [
+	{
+		id: 5,
+		title: "Vsorpay",
+		description: "Send money with Card or Momo",
+		tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+		image: "/vsorpay.png",
+		link: "https://apps.apple.com/gb/app/vsorpay/id6448659878", // replace with actual company site
+	},
+	{
+		id: 6,
+		title: "Nkwa",
+		description: "Saving via Mobile Money",
+		tech: ["Next.js", "Tailwind CSS", "Vercel"],
+		image: "/nkwa.png",
+		link: "https://apps.apple.com/gb/app/nkwa/id1535681910",
+	},
+];
 
 const ProjectCard = ({
 	project,
@@ -257,6 +275,18 @@ export default function ProjectsSection() {
 							</button>
 						</div>
 					)}
+				</div>
+
+				<div className="my-16">
+					<h2 className="text-3xl font-bold mb-12 flex items-center gap-4">
+						<span className="h-[2px] w-12 bg-white"></span> Featured{" "}
+						<span className="text-[#FFAE00]">Mobile Applications</span>
+					</h2>
+				</div>
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+					{mobileProjects.map((project, index) => (
+						<ProjectCard key={project.id} project={project} index={index} />
+					))}
 				</div>
 			</div>
 		</section>
