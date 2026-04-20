@@ -149,7 +149,7 @@ const mobileProjects = [
 		id: 5,
 		title: "Vsorpay",
 		description: "Send money with Card or Momo",
-		tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+		tech: ["React Native", "Redux", "Google Cloud"],
 		image: "/vsorpay.png",
 		link: "https://apps.apple.com/gb/app/vsorpay/id6448659878", // replace with actual company site
 	},
@@ -157,7 +157,7 @@ const mobileProjects = [
 		id: 6,
 		title: "Nkwa",
 		description: "Saving via Mobile Money",
-		tech: ["Next.js", "Tailwind CSS", "Vercel"],
+		tech: ["React Native", "Redux", "Docker"],
 		image: "/nkwa.png",
 		link: "https://apps.apple.com/gb/app/nkwa/id1535681910",
 	},
