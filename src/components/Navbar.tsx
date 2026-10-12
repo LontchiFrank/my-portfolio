@@ -3,7 +3,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,12 +16,12 @@ const NAV_ITEMS: NavItem[] = [
 	{ href: "#home", label: "Home" },
 	{ href: "#about", label: "About" },
 	{ href: "#skills", label: "Skills" },
+	{ href: "#credentials", label: "Credentials" },
 	{ href: "#projects", label: "Projects" },
 	{ href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
-	const pathname = usePathname();
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 	const [activeSection, setActiveSection] = useState("#home");
@@ -78,7 +77,7 @@ export default function Navbar() {
 					</div>
 
 					{/* Desktop nav */}
-					<div className="hidden md:flex md:items-center md:space-x-6">
+					<div className="hidden lg:flex lg:items-center lg:space-x-4">
 						{NAV_ITEMS.map((item) => {
 							const active = activeSection === item.href;
 							return (
@@ -116,7 +115,7 @@ export default function Navbar() {
 					</div>
 
 					{/* Mobile controls */}
-					<div className="flex items-center md:hidden">
+					<div className="flex items-center lg:hidden">
 						<button
 							onClick={() => setMobileOpen((s) => !s)}
 							aria-label="Toggle menu"
@@ -135,7 +134,7 @@ export default function Navbar() {
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -8 }}
 						transition={{ duration: 0.18 }}
-						className="md:hidden">
+						className="lg:hidden">
 						<div className="px-4 pt-2 pb-4 space-y-2 border-t bg-white/95 dark:bg-slate-900/95">
 							{NAV_ITEMS.map((item) => {
 								const active = activeSection === item.href;
