@@ -113,7 +113,7 @@ export default function Home() {
 									],
 									[
 										{ text: "Cyber  ", color: "#FFAE00" },
-										{ text: " security " },
+										{ text: "security " },
 										{ text: "Analyst", color: "#FFAE00" },
 									],
 								]}
