@@ -6,6 +6,29 @@ import { motion } from "framer-motion";
 import { Award, ArrowUpRight, Download, ShieldCheck } from "lucide-react";
 import { credentials, credlyProfile, microsoftProfile, type Credential } from "@/data/credentials";
 
+const certificates = [
+  {
+    title: "Cybersecurity Job Simulation",
+    provider: "Mastercard · Forage",
+    date: "2026-10-26",
+    displayDate: "26 October 2026",
+    description: "Completed practical tasks designing a phishing email simulation and interpreting phishing simulation results.",
+    file: "cybersecurity-forage-certificate",
+    width: 842,
+    height: 595,
+  },
+  {
+    title: "Front-End Software Engineering Job Simulation",
+    provider: "Skyscanner · Forage",
+    date: "2026-09-07",
+    displayDate: "7 September 2026",
+    description: "Practical experience creating a Backpack React web app through Skyscanner’s job simulation on Forage.",
+    file: "skyscanner-forage-certificate",
+    width: 1263,
+    height: 893,
+  },
+];
+
 const filters = ["All", "Credly", "Microsoft Learn"] as const;
 const linkStyle = "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFAE00]";
 
@@ -53,22 +76,24 @@ export default function Credentials() {
           </div>
         </div>
 
-        <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} whileHover={{ scale: 1.02 }} className="mb-12 grid overflow-hidden rounded-2xl border border-[#FFAE00]/30 bg-[#171717] shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-[#FFAE00] hover:shadow-[0_0_25px_#FFAE00] md:grid-cols-2">
-          <a href="/credentials/skyscanner-forage-certificate.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center bg-white p-4 focus-visible:outline-4 focus-visible:outline-[#FFAE00]" aria-label="Open Skyscanner certificate PDF in a new tab">
-            <Image src="/credentials/skyscanner-forage-certificate.png" alt="Skyscanner and Forage certificate of completion awarded to Fodjo Frank for the Front-End Software Engineering Job Simulation" width={1263} height={893} className="h-auto w-full" />
-          </a>
-          <div className="flex flex-col justify-center p-6 sm:p-8">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#FFAE00]">Certificate of completion</p>
-            <h3 className="text-2xl font-bold">Front-End Software Engineering Job Simulation</h3>
-            <p className="mt-3 font-medium text-neutral-200">Skyscanner · Forage</p>
-            <p className="mt-2 text-sm text-neutral-400">Completed <time dateTime="2026-09-07">7 September 2026</time></p>
-            <p className="mt-5 leading-relaxed text-neutral-300">Practical experience creating a Backpack React web app through Skyscanner’s job simulation on Forage.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="/credentials/skyscanner-forage-certificate.pdf" target="_blank" rel="noopener noreferrer" className={`${linkStyle} bg-[#FFAE00] text-black hover:bg-amber-400`}>View certificate <ArrowUpRight size={16} aria-hidden="true" /></a>
-              <a href="/credentials/skyscanner-forage-certificate.pdf" download="Fodjo-Frank-Skyscanner-Certificate.pdf" className={`${linkStyle} border border-neutral-600 hover:border-[#FFAE00]`}>Download PDF <Download size={16} aria-hidden="true" /></a>
+        {certificates.map(certificate => (
+          <motion.article key={certificate.file} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} whileHover={{ scale: 1.02 }} className="mb-12 grid overflow-hidden rounded-2xl border border-[#FFAE00]/30 bg-[#171717] shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-[#FFAE00] hover:shadow-[0_0_25px_#FFAE00] md:grid-cols-2">
+            <a href={`/credentials/${certificate.file}.pdf`} target="_blank" rel="noopener noreferrer" className="flex items-center bg-white p-4 focus-visible:outline-4 focus-visible:outline-[#FFAE00]" aria-label={`Open ${certificate.title} certificate PDF in a new tab`}>
+              <Image src={`/credentials/${certificate.file}.png`} alt={`${certificate.provider} certificate of completion awarded to Fodjo Frank for the ${certificate.title}`} width={certificate.width} height={certificate.height} className="h-auto w-full" />
+            </a>
+            <div className="flex flex-col justify-center p-6 sm:p-8">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#FFAE00]">Certificate of completion</p>
+              <h3 className="text-2xl font-bold">{certificate.title}</h3>
+              <p className="mt-3 font-medium text-neutral-200">{certificate.provider}</p>
+              <p className="mt-2 text-sm text-neutral-400">Completed <time dateTime={certificate.date}>{certificate.displayDate}</time></p>
+              <p className="mt-5 leading-relaxed text-neutral-300">{certificate.description}</p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href={`/credentials/${certificate.file}.pdf`} target="_blank" rel="noopener noreferrer" className={`${linkStyle} bg-[#FFAE00] text-black hover:bg-amber-400`}>View certificate <ArrowUpRight size={16} aria-hidden="true" /></a>
+                <a href={`/credentials/${certificate.file}.pdf`} download={`Fodjo-Frank-${certificate.file}.pdf`} className={`${linkStyle} border border-neutral-600 hover:border-[#FFAE00]`}>Download PDF <Download size={16} aria-hidden="true" /></a>
+              </div>
             </div>
-          </div>
-        </motion.article>
+          </motion.article>
+        ))}
 
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div role="group" aria-label="Filter badges by provider" className="flex flex-wrap gap-2">
