@@ -2,16 +2,17 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Award, ArrowUpRight, Download, ShieldCheck } from "lucide-react";
 import { credentials, credlyProfile, microsoftProfile, type Credential } from "@/data/credentials";
 
 const filters = ["All", "Credly", "Microsoft Learn"] as const;
 const linkStyle = "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFAE00]";
 
-function BadgeCard({ credential }: { credential: Credential }) {
+function BadgeCard({ credential, index }: { credential: Credential; index: number }) {
   const [imageFailed, setImageFailed] = useState(false);
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-neutral-800 bg-gradient-to-br from-[#191919] to-[#121212] p-6 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-[#FFAE00] hover:shadow-[0_0_25px_#FFAE00]">
+    <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: (index % 3) * 0.15 }} whileHover={{ scale: 1.03 }} className="flex h-full flex-col rounded-2xl border border-neutral-800 bg-gradient-to-br from-[#191919] to-[#121212] p-6 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-[#FFAE00] hover:shadow-[0_0_25px_#FFAE00]">
       <div className="mb-5 flex items-center justify-between gap-3">
         <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-xl bg-white p-2">
           {imageFailed ? <Award className="h-12 w-12 text-amber-600" aria-label="Badge artwork unavailable" /> : <Image unoptimized src={credential.image} alt={`${credential.title} badge`} width={80} height={80} className="h-20 w-20 object-contain" onError={() => setImageFailed(true)} />}
@@ -27,7 +28,7 @@ function BadgeCard({ credential }: { credential: Credential }) {
         </a>
         {credential.provider === "Microsoft Learn" && <a href={microsoftProfile} target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:underline focus-visible:outline-2 focus-visible:outline-[#FFAE00]">View achievement profile</a>}
       </div>
-    </article>
+    </motion.article>
   );
 }
 
@@ -52,7 +53,7 @@ export default function Credentials() {
           </div>
         </div>
 
-        <article className="mb-12 grid overflow-hidden rounded-2xl border border-[#FFAE00]/30 bg-[#171717] shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-[#FFAE00] hover:shadow-[0_0_25px_#FFAE00] md:grid-cols-2">
+        <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} whileHover={{ scale: 1.02 }} className="mb-12 grid overflow-hidden rounded-2xl border border-[#FFAE00]/30 bg-[#171717] shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-[#FFAE00] hover:shadow-[0_0_25px_#FFAE00] md:grid-cols-2">
           <a href="/credentials/skyscanner-forage-certificate.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center bg-white p-4 focus-visible:outline-4 focus-visible:outline-[#FFAE00]" aria-label="Open Skyscanner certificate PDF in a new tab">
             <Image src="/credentials/skyscanner-forage-certificate.png" alt="Skyscanner and Forage certificate of completion awarded to Fodjo Frank for the Front-End Software Engineering Job Simulation" width={1263} height={893} className="h-auto w-full" />
           </a>
@@ -67,7 +68,7 @@ export default function Credentials() {
               <a href="/credentials/skyscanner-forage-certificate.pdf" download="Fodjo-Frank-Skyscanner-Certificate.pdf" className={`${linkStyle} border border-neutral-600 hover:border-[#FFAE00]`}>Download PDF <Download size={16} aria-hidden="true" /></a>
             </div>
           </div>
-        </article>
+        </motion.article>
 
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div role="group" aria-label="Filter badges by provider" className="flex flex-wrap gap-2">
@@ -76,7 +77,7 @@ export default function Credentials() {
           <p aria-live="polite" className="text-sm text-neutral-400">Showing {visible.length} of {filtered.length} achievements</p>
         </div>
         <div id="credential-badges" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map(credential => <BadgeCard key={credential.url} credential={credential} />)}
+          {visible.map((credential, index) => <BadgeCard key={credential.url} credential={credential} index={index} />)}
         </div>
         {filtered.length > 6 && <div className="mt-8 text-center"><button type="button" aria-expanded={expanded} aria-controls="credential-badges" onClick={() => setExpanded(value => !value)} className={`${linkStyle} border border-neutral-600 hover:border-[#FFAE00]`}>{expanded ? "Show fewer badges" : `Show all ${filtered.length} achievements`}</button></div>}
         <p className="mt-6 text-sm text-neutral-500">Microsoft Learn badges and trophies recognise completed modules and learning paths.</p>
