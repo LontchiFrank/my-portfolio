@@ -68,7 +68,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
 					<Badge
 						key={index}
 						variant="outline"
-						className="group/badge relative before:[background:radial-gradient(circle_at_right_top,rgba(255,255,255,0.1),transparent_80%)] hover:bg-gray-700/80 text-gray-100 border-gray-600 flex items-center gap-2 py-2 px-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20">
+						className="group/badge relative before:[background:radial-gradient(circle_at_right_top,rgba(255,255,255,0.1),transparent_80%)] hover:bg-gray-700/80 text-gray-100 border-gray-600 flex items-center gap-2 py-2 px-3 hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_#FFAE00]">
 						<span className="transform group-hover/badge:scale-110 transition-transform duration-300">
 							{skill.icon}
 						</span>

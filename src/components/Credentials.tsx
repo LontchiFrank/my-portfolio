@@ -11,7 +11,7 @@ const linkStyle = "inline-flex items-center justify-center gap-2 rounded-lg px-4
 function BadgeCard({ credential }: { credential: Credential }) {
   const [imageFailed, setImageFailed] = useState(false);
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-neutral-800 bg-gradient-to-br from-[#191919] to-[#121212] p-6 transition-colors hover:border-[#FFAE00]/60">
+    <article className="flex h-full flex-col rounded-2xl border border-neutral-800 bg-gradient-to-br from-[#191919] to-[#121212] p-6 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-[#FFAE00] hover:shadow-[0_0_25px_#FFAE00]">
       <div className="mb-5 flex items-center justify-between gap-3">
         <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-xl bg-white p-2">
           {imageFailed ? <Award className="h-12 w-12 text-amber-600" aria-label="Badge artwork unavailable" /> : <Image unoptimized src={credential.image} alt={`${credential.title} badge`} width={80} height={80} className="h-20 w-20 object-contain" onError={() => setImageFailed(true)} />}
@@ -52,7 +52,7 @@ export default function Credentials() {
           </div>
         </div>
 
-        <article className="mb-12 grid overflow-hidden rounded-2xl border border-[#FFAE00]/30 bg-[#171717] md:grid-cols-2">
+        <article className="mb-12 grid overflow-hidden rounded-2xl border border-[#FFAE00]/30 bg-[#171717] shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-[#FFAE00] hover:shadow-[0_0_25px_#FFAE00] md:grid-cols-2">
           <a href="/credentials/skyscanner-forage-certificate.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center bg-white p-4 focus-visible:outline-4 focus-visible:outline-[#FFAE00]" aria-label="Open Skyscanner certificate PDF in a new tab">
             <Image src="/credentials/skyscanner-forage-certificate.png" alt="Skyscanner and Forage certificate of completion awarded to Fodjo Frank for the Front-End Software Engineering Job Simulation" width={1263} height={893} className="h-auto w-full" />
           </a>
