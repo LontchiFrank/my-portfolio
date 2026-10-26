@@ -9,6 +9,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import React from "react";
 import EducationTimeline from "@/components/Education";
+import Credentials from "@/components/Credentials";
 import SkillsSection from "./pages/Skills";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
@@ -324,6 +325,7 @@ export default function Home() {
 					</h1>
 				</div>
 				<SkillsSection />
+				<Credentials />
 				<Project />
 				<Contact />
 				<Footer />

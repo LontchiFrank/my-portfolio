@@ -1,7 +1,7 @@
 /** @format */
 
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
@@ -59,6 +59,7 @@ export default function IconCloud({
 	imageArray,
 }) {
 	const [data, setData] = useState(null);
+	const cloudId = useId();
 	const { theme } = useTheme();
 
 	useEffect(() => {
@@ -77,8 +78,7 @@ export default function IconCloud({
 	}, [data, theme]);
 
 	return (
-		// @ts-ignore
-		<Cloud {...cloudProps}>
+		<Cloud {...cloudProps} id={cloudId}>
 			<>
 				<>{renderedIcons}</>
 				{imageArray &&
