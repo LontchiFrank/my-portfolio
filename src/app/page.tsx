@@ -110,6 +110,11 @@ export default function Home() {
 										{ text: " Stack Devel" },
 										{ text: "oper", color: "#FFAE00" },
 									],
+									[
+										{ text: "Cyber  ", color: "#FFAE00" },
+										{ text: " security " },
+										{ text: "Analyst", color: "#FFAE00" },
+									],
 								]}
 								speed={80}
 								eraseDelay={2000}
